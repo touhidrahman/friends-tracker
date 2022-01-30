@@ -1,0 +1,47 @@
+<div *ngIf="friend" class="rounded-lg bg-white shadow-lg">
+  <div class="p-6 w-full">
+    <h5 class="text-gray-900 text-xl font-medium mb-2">
+      {{ friend.firstName }} {{ friend.lastName }}
+      <span class="ml-4 text-sm text-blue-400" *ngIf="friend.gender === 'male'"
+        >(he/him)</span
+      >
+      <span
+        class="ml-4 text-sm text-pink-400"
+        *ngIf="friend.gender === 'female'"
+        >(she/her)</span
+      >
+    </h5>
+    <p class="text-sm text-gray-400 mb-2">
+      {{ friend.jobTitle }}
+    </p>
+
+    <div class="table text-gray-700">
+      <div class="table-row">
+        <div class="table-cell text-gray-500 align-middle">
+          <i class="bx bx-briefcase"></i>
+        </div>
+        <div class="table-cell text-sm font-medium pl-4">
+          at {{ friend.company }}
+        </div>
+      </div>
+
+      <div class="table-row">
+        <div class="table-cell text-gray-500 align-middle">
+          <i class="bx bx-map-pin"></i>
+        </div>
+        <div class="table-cell text-sm font-medium pl-4">
+          from {{ friend.city }}
+        </div>
+      </div>
+
+      <div class="table-row">
+        <div class="table-cell text-gray-500 align-middle">
+          <i class="bx bx-phone"></i>
+        </div>
+        <div class="table-cell text-sm font-medium pl-4">
+          {{ friend.phone }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

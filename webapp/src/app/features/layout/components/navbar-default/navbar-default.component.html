@@ -1,0 +1,13 @@
+<nav class="relative w-full flex flex-wrap items-center justify-between py-4 bg-gray-100 text-gray-500 hover:text-gray-700 focus:text-gray-700 shadow-lg">
+  <div class="container w-full flex flex-wrap items-center sm:px-0 px-4 justify-between mx-auto">
+    <div class="">
+      <a class="flex items-center text-gray-600 hover:text-gray-700 focus:text-gray-700 mt-2 lg:mt-0 mr-1" [routerLink]="['/']">
+        <i class="bx bx-group text-3xl"></i>
+        <span class="text-2xl ml-6">My Friends</span>
+      </a>
+    </div>
+    <div>
+      <ng-content></ng-content>
+    </div>
+  </div>
+</nav>

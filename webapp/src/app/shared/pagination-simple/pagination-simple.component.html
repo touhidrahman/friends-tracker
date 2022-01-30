@@ -1,0 +1,19 @@
+<div class="space-x-1 flex items-center">
+  <span class="mr-4 text-gray-400">Page {{ currentPage }}</span>
+
+  <button
+    (click)="prevClick.emit()"
+    class="px-4 py-2 text-sm font-medium text-gray-900 bg-white rounded-l border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-1 focus:ring-blue-700 focus:text-blue-700"
+  >
+    <i class="bx bx-chevron-left"></i>
+    Prev
+  </button>
+
+  <button
+    (click)="nextClick.emit()"
+    class="px-4 py-2 text-sm font-medium text-gray-900 bg-white rounded-r border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-1 focus:ring-blue-700 focus:text-blue-700"
+  >
+    Next
+    <i class="bx bx-chevron-right"></i>
+  </button>
+</div>

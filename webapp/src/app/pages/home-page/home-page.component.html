@@ -1,0 +1,44 @@
+<app-navbar-default>
+  <app-friend-tracking-status
+    [tracking]="(polling.asObservable() | async) ?? false"
+    [loading]="(loading.asObservable() | async) ?? false"
+    (toggle)="polling.next($event)"
+  ></app-friend-tracking-status>
+</app-navbar-default>
+
+<main class="container mx-auto px-4 sm:px-0 pt-6 pb-24 relative">
+  <app-friend-map
+    [friends]="(friends.asObservable() | async) ?? []"
+  ></app-friend-map>
+
+  <div class="max-w-screen-sm mt-8 mb-12 mx-auto">
+    <app-friend-search
+      (searchTermChange)="search.next($event)"
+    ></app-friend-search>
+  </div>
+
+  <div class="mt-12 mb-10 flex justify-between">
+    <h1 class="text-3xl text-gray-500 font-semibold">Friends</h1>
+
+    <app-pagination-simple
+      (nextClick)="goToPage(1)"
+      (prevClick)="goToPage(-1)"
+      [currentPage]="(page.asObservable() | async) ?? 0"
+    ></app-pagination-simple>
+  </div>
+
+  <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 xl:grid-cols-3">
+    <app-friend-card
+      *ngFor="let friend of friends.asObservable() | async"
+      [friend]="friend"
+    ></app-friend-card>
+  </div>
+
+  <div class="mt-10 flex justify-end">
+    <app-pagination-simple
+      (nextClick)="goToPage(1)"
+      (prevClick)="goToPage(-1)"
+      [currentPage]="(page.asObservable() | async) ?? 0"
+    ></app-pagination-simple>
+  </div>
+</main>
